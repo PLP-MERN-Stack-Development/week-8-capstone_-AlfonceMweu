@@ -29,4 +29,29 @@ router.post(
   }
 );
 
+// Update a course (instructor or admin only)
+router.put(
+  '/:id',
+  authenticateToken,
+  authorizeRoles('instructor', 'admin'),
+  async (req, res, next) => {
+    try {
+      const updatedCourse = await Course.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+      );
+      if (!updatedCourse) return res.status(404).json({ error: "Course not found" });
+
+      // Emit real-time update event
+      const io = req.app.get('io');
+      io.emit('courseUpdated', updatedCourse);
+
+      res.json(updatedCourse);
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
 module.exports = router;
