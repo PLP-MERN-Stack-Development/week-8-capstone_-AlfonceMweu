@@ -79,7 +79,8 @@ npm run dev
 
 Set API URL in `.env`:
 ```
-VITE_API_URL=https://your-backend-url
+VITE_API_URL=http://localhost:5000
+
 ```
 
 ---
@@ -137,8 +138,8 @@ VITE_API_URL=https://your-backend-url
 ## Demo
 
 ![Screenshot](Screenshot%202025-07-23%20003525.png)
-
----
+C:\Users\Admin\Downloads\week-8-capstone_-AlfonceMweu\Screenshot 2025-07-23 003525.png
+---C:\Users\Admin\DownloaC:\Users\Admin\Downloads\week-8-capstone_-AlfonceMweu\Screenshot 2025-07-25 000455.pngds\week-8-capstone_-AlfonceMweu\Screenshot 2025-07-25 000359.png
 
 ## License
 
