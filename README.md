@@ -52,7 +52,5 @@ VITE_API_URL=https://vercel.com/alfonce-mweus-projects/mern-lms-backend/35yFapQK
 - **Backend:** https://vercel.com/alfonce-mweus-projects/mern-lms-backend/35yFapQKiDhPmAnthuuK3AR9Bud9
 
 ## Demo
-- [Video link]
-- ![Screenshot](screenshot.png)
 
 ![alt text](<Screenshot 2025-07-23 003525.png>)
