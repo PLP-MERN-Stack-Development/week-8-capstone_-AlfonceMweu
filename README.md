@@ -1,52 +1,57 @@
-# MERN Stack Capstone Project
+# MERN LMS
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+## Overview
+A Learning Management System built with MongoDB, Express, React, and Node.js.
 
-## Assignment Overview
+## Setup Instructions
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+### Backend
+```sh
+cd mern-lms-backend
+npm install
+npm run dev
+```
+Set environment variables in `.env`:
+```
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+```
 
-## Getting Started
+### Frontend
+```sh
+cd mern-lms-frontend
+npm install
+npm run dev
+```
+Set API URL in `.env`:
+```
+VITE_API_URL=https://your-backend-url
+```
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+## API Documentation
+- `POST /api/users/register` – Register a new user
+- `POST /api/users/login` – Login
+- `GET /api/courses` – List courses
+- `GET /api/courses/:id` – Course details
+- `PUT /api/courses/:id` – Update course (instructor/admin)
 
-## Files Included
+## User Guide
+- Register and login as a student or instructor.
+- Browse courses, view lessons, and track progress.
+- Instructors can create and update courses.
 
-- `Week8-Assignment.md`: Detailed assignment instructions
+## Technical Architecture
+- **Frontend:** React + Vite + Tailwind CSS
+- **Backend:** Express.js + MongoDB + Socket.io
+- **Authentication:** JWT
+- **Real-time:** Socket.io for course updates
 
-## Requirements
+## Deployment
+- **Frontend:** [Vercel/Netlify URL]
+- **Backend:** [Render/Railway/Heroku URL]
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
+## Demo
+- [Video link]
+- ![Screenshot](screenshot.png)
 
-## Project Ideas
-
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
-
-## Submission
-
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+![alt text](<Screenshot 2025-07-23 003525.png>)

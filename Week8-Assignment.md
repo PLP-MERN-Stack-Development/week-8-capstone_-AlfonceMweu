@@ -15,6 +15,7 @@ Design, develop, and deploy a comprehensive full-stack MERN application that sho
 
 ### Task 2: Backend Development
 - Set up a MongoDB database with appropriate schemas and validation
+-intergate vite and tailwind
 - Develop a RESTful API using Express.js with proper error handling
 - Implement authentication and authorization
 - Create middleware for logging, validation, and security
