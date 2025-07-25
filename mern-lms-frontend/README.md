@@ -1,12 +1,66 @@
-# React + Vite
+# MERN LMS Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the MERN LMS project, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Responsive UI for students and instructors
+- Client-side routing with React Router
+- Authentication and protected routes
+- Connects to backend API for data
+- Real-time updates with Socket.io-client
+- Form validation and error handling
+- Accessibility and cross-browser/device support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Setup Instructions
+
+1. **Clone the repository:**
+   ```sh
+   git clone <https://github.com/AlfonceMweu/mern-lms-frontend.git>
+   cd mern-lms-frontend
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+3. **Set API URL in `.env`:**
+   ```
+   VITE_API_URL=http://localhost:5000
+   ```
+  
+4. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+
+---
+
+## Testing
+
+- **Unit tests:**  
+  ```sh
+  npm test
+  ```
+- **E2E tests (Cypress):**  
+  ```sh
+  npm run cypress
+  ```
+
+---
+
+## Deployment
+
+- Deploy to Vercel or Netlify.
+- Set `VITE_API_URL` in your deployment environment variables.
+
+---
+
+## License
+
+MIT
