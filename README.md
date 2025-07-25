@@ -13,8 +13,9 @@ npm run dev
 ```
 Set environment variables in `.env`:
 ```
-MONGO_URI=your_mongo_uri
-JWT_SECRET=your_jwt_secret
+MONGO_URI=mongodb://localhost:27017/mern-blog
+PORT=5000
+JWT_SECRET=mySuperSecretKey123!@#
 ```
 
 ### Frontend
@@ -25,7 +26,7 @@ npm run dev
 ```
 Set API URL in `.env`:
 ```
-VITE_API_URL=https://your-backend-url
+VITE_API_URL=https://vercel.com/alfonce-mweus-projects/mern-lms-backend/35yFapQKiDhPmAnthuuK3AR9Bud9
 ```
 
 ## API Documentation
@@ -47,8 +48,8 @@ VITE_API_URL=https://your-backend-url
 - **Real-time:** Socket.io for course updates
 
 ## Deployment
-- **Frontend:** [Vercel/Netlify URL]
-- **Backend:** [Render/Railway/Heroku URL]
+- **Frontend:** https://vercel.com/alfonce-mweus-projects/mern-lms-frontend/GYdciXZSNsABV4jeBGqBk8Byb9zr
+- **Backend:** https://vercel.com/alfonce-mweus-projects/mern-lms-backend/35yFapQKiDhPmAnthuuK3AR9Bud9
 
 ## Demo
 - [Video link]
