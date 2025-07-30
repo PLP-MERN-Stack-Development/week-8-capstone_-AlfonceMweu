@@ -1,33 +1,36 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const userController = require('../controllers/userController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
-// Register
-router.post('/register', async (req, res, next) => {
-  try {
-    const { username, email, password, role } = req.body;
-    const user = new User({ username, email, password, role });
-    await user.save();
-    res.status(201).json({ message: 'User registered successfully' });
-  } catch (err) {
-    next(err);
-  }
-});
+// Protect all routes after this middleware
+router.use(authController.protect);
 
-// Login
-router.post('/login', async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-    if (!user || !(await user.comparePassword(password))) {
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
-    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
-    res.json({ token, user: { id: user._id, username: user.username, role: user.role } });
-  } catch (err) {
-    next(err);
-  }
-});
+// Get current user profile
+router.get('/me', userController.getMe, userController.getUser);
+
+// Update user profile
+router.patch('/updateMe', userController.updateMe);
+router.put('/updateMe', userController.updateMe);
+
+// Delete user account
+router.delete('/deleteMe', userController.deleteMe);
+
+// Enroll in course
+router.post('/enroll/:courseId', userController.enrollInCourse);
+
+// Get enrolled courses
+router.get('/enrolled-courses', userController.getEnrolledCourses);
+
+// ADMIN ONLY ROUTES
+router.use(authController.restrictTo('admin'));
+
+router.route('/')
+  .get(userController.getAllUsers);
+
+router.route('/:id')
+  .get(userController.getUser)
+  .patch(userController.updateUser)
+  .delete(userController.deleteUser);
 
 module.exports = router;

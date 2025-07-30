@@ -1,14 +1,14 @@
 const express = require('express');
-const courseController = require('../controllers/courseController');
+const lessonController = require('../controllers/lessonController');
 const authController = require('../controllers/authController');
 const router = express.Router();
 
 // Public routes
-router.route('/')
-  .get(courseController.getAllCourses);
+router.route('/course/:courseId')
+  .get(lessonController.getCourseLessons);
 
 router.route('/:id')
-  .get(courseController.getCourse);
+  .get(lessonController.getLesson);
 
 // Protected routes (require authentication)
 router.use(authController.protect);
@@ -17,13 +17,13 @@ router.use(authController.protect);
 router.use(authController.restrictTo('instructor', 'admin'));
 
 router.route('/')
-  .post(courseController.createCourse);
+  .post(lessonController.createLesson);
 
 router.route('/:id')
-  .patch(courseController.updateCourse)
-  .delete(courseController.deleteCourse);
+  .patch(lessonController.updateLesson)
+  .delete(lessonController.deleteLesson);
 
-// Publish course
-router.patch('/:id/publish', courseController.publishCourse);
+// Reorder lessons
+router.patch('/course/:courseId/reorder', lessonController.reorderLessons);
 
 module.exports = router;
